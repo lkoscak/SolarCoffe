@@ -12,6 +12,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using SolarCoffe.Data;
+using SolarCoffe.Services.Product;
 
 namespace SolarCoffe
 {
@@ -33,6 +34,8 @@ namespace SolarCoffe
             {
                 opt.UseSqlServer(Configuration.GetConnectionString("SolarCoffeDBConnection"));
             });
+
+            services.AddTransient<IProductService, ProductService>();
         }
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

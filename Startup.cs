@@ -12,6 +12,9 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using SolarCoffe.Data;
+using SolarCoffe.Services.Customer;
+using SolarCoffe.Services.Inventory;
+using SolarCoffe.Services.Order;
 using SolarCoffe.Services.Product;
 
 namespace SolarCoffe
@@ -36,6 +39,9 @@ namespace SolarCoffe
             });
 
             services.AddTransient<IProductService, ProductService>();
+            services.AddTransient<IInventoryService, InventoryService>();
+            services.AddTransient<ICustomerService, CustomerService>();
+            services.AddTransient<IOrderService, OrderService>();
         }
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

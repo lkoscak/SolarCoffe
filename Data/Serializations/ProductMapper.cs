@@ -4,7 +4,7 @@ using SolarCoffe.Data.ViewModels;
 
 namespace SolarCoffe.Data.Serializations
 {
-    public class ProductMapper
+    public static class ProductMapper
     {
         public static ProductModel SerializeProductModel(Product product)
         {

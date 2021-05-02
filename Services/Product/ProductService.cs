@@ -14,11 +14,6 @@ namespace SolarCoffe.Services.Product
         {
             _dbContext = solarDbContext;
         }
-        public ServiceResponse<bool> ArchiveProduct(int id)
-        {
-            throw new NotImplementedException();
-        }
-
         public ServiceResponse<Data.Models.Product> CreateProduct(Data.Models.Product product)
         {
             try
